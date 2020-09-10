@@ -4,7 +4,7 @@ include_once("connect.php"); // conexão com o banco de dados
 // echo "<pre>"; print_r($_SESSION);
 
 if ($_POST['email'] && $_POST['senha']) {
-    $query = "INSERT INTO usuario SET email = '{$_POST['email']}', senha = MD5('{$_POST['senha']}')";
+    $query = "INSERT INTO usuario SET email = '{$_POST['email']}', nome = '{$_POST['nome']}', senha = MD5('{$_POST['senha']}')";
 
 	$exec = mysqli_query($link, $query);
 	
@@ -62,8 +62,8 @@ if ($_POST['email'] && $_POST['senha']) {
 						<span class="focus-input100-2"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "E-mail é obrigatório: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+					<div class="wrap-input100 validate-input" data-validate = "Nome é obrigatório">
+						<input class="input100" type="text" name="nome" placeholder="Nome">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
