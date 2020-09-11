@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include_once("connect.php"); // conexão com o banco de dados
 
 // echo "<pre>"; print_r($_SESSION);

@@ -9,13 +9,12 @@ while ($result = mysqli_fetch_assoc($exec)) {
 
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_HEADER, true);
-    curl_setopt($ch, CURLOPT_NOBODY, false);
+    curl_setopt($ch, CURLOPT_NOBODY, true);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
     curl_setopt($ch, CURLOPT_TIMEOUT,10);
     $output = curl_exec($ch);
     $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
 
-    mysqli_query($link, "UPDATE `url` SET corpo='{$output}', status='{$httpcode}', baixado=1 WHERE id = {$result['id']}, data_baixa=NOW()");
-
+    mysqli_query($link, "UPDATE `url` SET corpo='{$output}', status='{$httpcode}', baixado=1, data_baixa=NOW() WHERE id = {$result['id']}");
 }

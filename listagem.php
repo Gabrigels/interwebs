@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 
 // print_r($_SESSION);
 
@@ -175,7 +176,7 @@ if ($_SESSION['usuario']) {
 		}
 
 		function voltar() {
-			$("#url").val();
+			$("#url").val('');
 
 			$("#editar").hide();
 			$("#salvar").show();

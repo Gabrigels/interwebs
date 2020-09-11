@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     include_once("../connect.php");
     $url = $_POST["url"];
     $usuario = $_POST["usuario"];
